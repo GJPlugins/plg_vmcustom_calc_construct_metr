@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.8" group="vmcustom" method="upgrade">
+	<name>PLG_VMCUSTOM_CALC_CONSTRUCT_METR</name>
+	<creationDate>31.05.2021</creationDate>
+	<author>Gartes</author>
+	<authorEmail>your@email.com</authorEmail>
+	<authorUrl>http://your.url.com</authorUrl>
+	<copyright>A copyright</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0</version>
+	<description>PLG_VMCUSTOM_CALC_CONSTRUCT_METR_XML_DESCRIPTION</description>
+
+	<!-- Scripts to run on installation -->
+	<scriptfile></scriptfile>
+
+
+
+	<!-- Plugin files -->
+	<files>
+		<filename>install.sql</filename>
+		<filename>README.md</filename>
+		<filename>update.xml</filename>
+		<filename plugin="plg_vmcustom_calc_construct_metr">plg_vmcustom_calc_construct_metr.php</filename>
+		<folder>assets</folder>
+		<folder>helpers</folder>
+		<folder>language</folder>
+
+
+	</files>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">install.sql</file>
+		</sql>
+	</install>
+	<!-- Config parameter -->
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="sample"
+					type="text"
+					default="42"
+					label="PLG_VMCUSTOM_CALC_CONSTRUCT_METR_SAMPLE_LABEL"
+					description="PLG_VMCUSTOM_CALC_CONSTRUCT_METR_SAMPLE_DESCRIPTION"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+
+	<!-- Update servers -->
+	<updateservers>
+		<server type="extension" priority="1" name="plg_vmcustom_calc_construct_metr">https://www.example.com/plg_plg_vmcustom_calc_construct_metr.xml</server>
+	</updateservers>
+</extension>

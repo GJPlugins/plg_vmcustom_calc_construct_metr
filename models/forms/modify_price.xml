@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset addfieldpath="/plugins/system/plg_vmcustom_calc_construct_metr/models/fields" />
+    <fieldset name="default">
+
+
+
+        <field name="modifier_value"
+        	type="gtm.text"
+        	default=""
+        	class="modifier_value "
+        	size="20"
+        	readonly=""
+        	required="1"
+        	label="PLG_VCCM_MODIFY_PRICE_MODIFIER_VALUE"
+        	description="PLG_VCCM_MODIFY_PRICE_MODIFIER_VALUE_DESC"
+        	showon=""
+        	hint=""
+        	filter="raw"
+			   button="true"
+			   button_onclick="loadTemplateVariables"
+			   button_icon="gtm-add-variable-icon"
+		/>
+
+
+
+
+
+
+		<field name="operation_modification"
+			type="gtm.list"
+			default="1"
+			required="1"
+			label="MODIFY_PRICE_OPERATION_MODIFICATION"
+			description="MODIFY_PRICE_OPERATION_MODIFICATION_DESC"
+			class="operationModification "
+			multiple="false"
+			readonly=""
+			showon=""
+			filter="raw" >
+				<option value="1">Прибавить к стоимости (+)</option>
+				<option value="2">Вычисть из стоимости (-)</option>
+				<option value="3">Прибавить к стоимости процент (+%)</option>
+				<option value="4">Вычисть из стоимости процент(-%)</option>
+				<option value="5">Установить фиксированно</option>
+			</field>
+
+		<field name="default_on"
+			   type="gtm.checkbox"
+			   label="MODIFY_PRICE_DEFAULT_ON"
+			   description="MODIFY_PRICE_DEFAULT_ON_DESC"
+			   value="1"
+			   checked="false" />
+
+
+
+
+
+    </fieldset>
+</form>

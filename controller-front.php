@@ -73,12 +73,7 @@
 
 
 
-            $dataScriptOptions = [
-                '__name' => 'plg_vmcustom_calc_construct_metr',
-                '__type' => 'system',
-            ];
-            $doc = \Joomla\CMS\Factory::getDocument();
-            $doc->addScriptOptions('plg_vmcustom_calc_construct_metr' , $dataScriptOptions);
+
 
 
 

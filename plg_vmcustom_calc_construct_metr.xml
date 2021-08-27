@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" version="3.8" group="vmcustom" method="upgrade">
+<extension type="plugin" version="3.8" group="system" method="upgrade">
 	<name>PLG_VMCUSTOM_CALC_CONSTRUCT_METR</name>
 	<creationDate>31.05.2021</creationDate>
 	<author>Gartes</author>
@@ -7,7 +7,7 @@
 	<authorUrl>http://your.url.com</authorUrl>
 	<copyright>A copyright</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.0</version>
+	<version>1.1</version>
 	<description>PLG_VMCUSTOM_CALC_CONSTRUCT_METR_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
@@ -22,8 +22,11 @@
 		<filename>update.xml</filename>
 		<filename plugin="plg_vmcustom_calc_construct_metr">plg_vmcustom_calc_construct_metr.php</filename>
 		<folder>assets</folder>
-		<folder>helpers</folder>
+		<folder>elements</folder>
+		<folder>Helpers</folder>
 		<folder>language</folder>
+		<folder>layouts</folder>
+		<folder>tables</folder>
 
 
 	</files>
@@ -36,6 +39,22 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
+				<fieldset addfieldpath="/libraries/GNZ11/Extensions/Fields" />
+				<field name="__v"
+					type="version"
+					path_xml="/plugins/system/plg_vmcustom_calc_construct_metr/plg_vmcustom_calc_construct_metr.xml"
+					class="__v"
+					filter="raw" />
+				<field name="development_on"
+					type="radio"
+					default="0"
+					label="Development mode"
+					class="btn-group btn-group-yesno development_on"
+					showon="" >
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
 				<field
 					name="sample"
 					type="text"
@@ -44,6 +63,26 @@
 					description="PLG_VMCUSTOM_CALC_CONSTRUCT_METR_SAMPLE_DESCRIPTION"
 				/>
 			</fieldset>
+
+			<!-- Ткани -->
+			<fieldset name="fabric">
+				<!-- Максимальное количество категорий тканей	-->
+				<field name="fabric_category_max"
+					type="text"
+					default="6"
+					class="fabric_category_max "
+					size="20"
+					readonly=""
+					required=""
+					label="PLG_VMCUSTOM_CALC_CONSTRUCT_METR_FABRIC_CATEGORY_MAX"
+					description="PLG_VMCUSTOM_CALC_CONSTRUCT_METR_FABRIC_CATEGORY_MAX_DESC"
+					showon=""
+					hint=""
+					filter="raw" />
+
+
+			</fieldset>
+
 		</fields>
 	</config>
 
